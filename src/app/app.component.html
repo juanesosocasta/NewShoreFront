@@ -5,7 +5,7 @@
 
 <!-- Toolbar -->
 <div class="header">
-
+  <img src="https://www.newshore.es/media/1411/newshore-by_flyr-logo.svg" alt="logo" width="20%">
   <div class="header-right">
     <a class="active" href="#home">home</a>
   </div>
@@ -16,20 +16,30 @@
 
   <!-- Resources -->
   <div class="signupFrm">
-    <form action="" class="form">
+    <form [formGroup]="form"  >
       <h1 class="title">NewShore_ vuelos</h1>
 
       <div class="inputContainer">
-        <input type="text" class="input" placeholder="Origen">
+        <input formControlName="origin" type="text" class="input" placeholder="Origen">
         <label for="" class="label">Origen</label>
-      </div>
+        <div class="validation"*ngIf="(GetForm['origin'].errors&&(GetForm['origin'].dirty||GetForm['origin'].touched))">
+          <strong>campo requerido</strong>
+        </div>
 
+      </div>
       <div class="inputContainer">
-        <input type="text" class="input" placeholder="Destino">
+        <input formControlName="destination" type="text" class="input" placeholder="Destino">
         <label for="" class="label">Destino</label>
+        <div class="validation"*ngIf="(GetForm['destination'].errors&&(GetForm['destination'].dirty||GetForm['destination'].touched))">
+          <strong>campo requerido</strong>
+        </div>
+
+
+
       </div>
 
-      <input type="submit" class="submitBtn" value="calcular Vuelo">
+      <input [disabled]="" type="submit" class="submitBtn" value="calcular Vuelo">
+      <i class="material.icons" prefix></i>
     </form>
   </div>
 

@@ -92,7 +92,7 @@
 /* Style the header with a grey background and some padding */
 .header {
   overflow: hidden;
-  background-color: #192b51;
+  background-color: #c2d4fb;
   padding: 20px 10px;
 }
 .img {
@@ -294,7 +294,9 @@ p {
   .card.highlight-card span {
     margin-left: 72px;
   }
-
+.validation{
+  color: red;
+}
 
 }
 
